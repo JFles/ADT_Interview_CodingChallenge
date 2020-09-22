@@ -59,15 +59,7 @@ class HomeCollectionViewController: UICollectionViewController {
         }
     }
 
-    // MARK: - Navigation
-    #warning("Implement navigation to detail VC")
-
-    // MARK: UICollectionViewDataSource
-//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 1
-//    }
-
+    // MARK: - UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return characters.count

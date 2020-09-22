@@ -70,16 +70,19 @@ class HomeCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 10
+        return characters.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Character", for: indexPath) as? CharacterCollectionViewCell else { fatalError("Failed to dequeue collection view cell") }
     
-        #warning("Configure cell here")
-        cell.label.text = "Foo\(indexPath.row)"
-        
-    
+        let character = characters[indexPath.row]
+
+        if let url = URL(string: character.image) {
+            cell.imageView.load(url: url)
+        }
+        cell.label.text = character.name
+
         return cell
     }
 

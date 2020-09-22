@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 class DetailViewController: UIViewController {
     // MARK: - Properties
     var character: RMCharacter?
@@ -22,6 +20,7 @@ class DetailViewController: UIViewController {
 
         configureNavigationBar()
         configureCharacterImage()
+        addOrientationObserver()
         configureTableView()
     }
 
@@ -33,19 +32,45 @@ class DetailViewController: UIViewController {
         guard let url = URL(string: character?.image ?? "") else { return }
 
         characterImage.load(url: url)
-        characterImage.contentMode = .scaleAspectFill
+        let orientation = UIDevice.current.orientation
+        if orientation == .portrait {
+            characterImage.contentMode = .scaleAspectFill
+        } else {
+            characterImage.contentMode = .scaleAspectFit
+        }
     }
 
     fileprivate func configureTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
+
+    // MARK: - Observers
+    fileprivate func addOrientationObserver() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(rotated),
+            name: UIDevice.orientationDidChangeNotification,
+            object: nil
+        )
+    }
+
+    @objc func rotated() {
+        let orientation = UIDevice.current.orientation
+
+        if orientation == .landscapeLeft
+            || orientation == .landscapeRight {
+            characterImage.contentMode = .scaleAspectFit
+        } else {
+            characterImage.contentMode = .scaleAspectFill
+        }
+    }
+
 }
 
 // MARK: - TableView DataSource
 extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        #warning("Refactor this")
         let mirror = Mirror(reflecting: character!)
         var rowCount = 0
 
@@ -76,9 +101,14 @@ extension DetailViewController: UITableViewDataSource {
             case 2:
                 setCellTitle(cell, to: "Species")
                 setCellSubtitle(cell, to: character?.species ?? "")
+            case 3:
+                setCellTitle(cell, to: "Location")
+                setCellSubtitle(cell, to: character?.location.name ?? "")
             default:
                 break
         }
+
+
         return cell
     }
 
@@ -95,5 +125,3 @@ extension DetailViewController: UITableViewDataSource {
 extension DetailViewController: UITableViewDelegate {
 
 }
-
-

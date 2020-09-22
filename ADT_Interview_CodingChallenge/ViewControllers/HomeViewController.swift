@@ -59,7 +59,6 @@ class HomeViewController: UITableViewController {
             strongSelf.isLoadingPage = false
         }
     }
-
 }
 
 // MARK: - TableView

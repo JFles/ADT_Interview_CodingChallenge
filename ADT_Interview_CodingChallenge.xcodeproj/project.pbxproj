@@ -11,6 +11,7 @@
 		6026F0E8251A564700B09469 /* RMCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6026F0E7251A564700B09469 /* RMCharacter.swift */; };
 		6026F0ED251A5D4700B09469 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6026F0EC251A5D4700B09469 /* DetailViewController.swift */; };
 		6026F0F3251A6CDF00B09469 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6026F0F2251A6CDF00B09469 /* UIImageViewExtension.swift */; };
+		6026F103251A7C6000B09469 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6026F102251A7C6000B09469 /* HomeCollectionViewController.swift */; };
 		60582DDB251A5214005B4B8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60582DDA251A5214005B4B8F /* AppDelegate.swift */; };
 		60582DDD251A5214005B4B8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60582DDC251A5214005B4B8F /* SceneDelegate.swift */; };
 		60582DDF251A5214005B4B8F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60582DDE251A5214005B4B8F /* HomeViewController.swift */; };
@@ -43,6 +44,7 @@
 		6026F0E7251A564700B09469 /* RMCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacter.swift; sourceTree = "<group>"; };
 		6026F0EC251A5D4700B09469 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6026F0F2251A6CDF00B09469 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		6026F102251A7C6000B09469 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
 		60582DD7251A5214005B4B8F /* ADT_Interview_CodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ADT_Interview_CodingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60582DDA251A5214005B4B8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60582DDC251A5214005B4B8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				60582DDE251A5214005B4B8F /* HomeViewController.swift */,
 				6026F0EC251A5D4700B09469 /* DetailViewController.swift */,
+				6026F102251A7C6000B09469 /* HomeCollectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				60582DDB251A5214005B4B8F /* AppDelegate.swift in Sources */,
 				60582DDD251A5214005B4B8F /* SceneDelegate.swift in Sources */,
 				6026F0ED251A5D4700B09469 /* DetailViewController.swift in Sources */,
+				6026F103251A7C6000B09469 /* HomeCollectionViewController.swift in Sources */,
 				6026F0E0251A55DE00B09469 /* RMCharacters.swift in Sources */,
 				6026F0E8251A564700B09469 /* RMCharacter.swift in Sources */,
 			);

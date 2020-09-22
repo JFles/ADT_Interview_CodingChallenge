@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 class DetailViewController: UIViewController {
     // MARK: - Properties
     var character: RMCharacter?

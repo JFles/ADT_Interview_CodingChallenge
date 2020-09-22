@@ -86,8 +86,8 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
-                                    <outlet property="imageView" destination="DSP-HN-Ebe" id="iF7-6B-spG"/>
-                                    <outlet property="label" destination="DSP-HN-Ebe" id="Ksy-qZ-38c"/>
+                                    <outlet property="imageView" destination="R5w-Uc-O4z" id="Lb3-Xy-VGK"/>
+                                    <outlet property="label" destination="cIS-C5-p6e" id="DEX-WR-D0M"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

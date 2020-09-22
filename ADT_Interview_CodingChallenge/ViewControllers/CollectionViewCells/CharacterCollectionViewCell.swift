@@ -9,8 +9,6 @@ import UIKit
 
 class CharacterCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
-    @IBOutlet var imageView: UIView!
-    @IBOutlet var label: UIView!
-    
-    
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var label: UILabel!
 }

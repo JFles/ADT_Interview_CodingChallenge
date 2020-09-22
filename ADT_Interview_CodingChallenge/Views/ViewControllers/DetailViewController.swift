@@ -33,10 +33,11 @@ class DetailViewController: UIViewController {
 
         characterImage.load(url: url)
         let orientation = UIDevice.current.orientation
-        if orientation == .portrait {
-            characterImage.contentMode = .scaleAspectFill
-        } else {
+        if orientation == .landscapeRight
+        || orientation == .landscapeLeft {
             characterImage.contentMode = .scaleAspectFit
+        } else {
+            characterImage.contentMode = .scaleAspectFill
         }
     }
 

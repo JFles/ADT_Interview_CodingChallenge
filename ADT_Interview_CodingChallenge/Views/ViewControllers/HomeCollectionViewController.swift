@@ -53,6 +53,7 @@ class HomeCollectionViewController: UICollectionViewController {
         DispatchQueue.main.async { [weak self] in
             guard let strongSelf = self else { return }
 
+            #warning("Fix updating issue -- likely an async issue")
             var indexPaths: [NSIndexPath] = []
             for i in 0..<strongSelf.collectionView!.numberOfItems(inSection: 0) {
                 indexPaths.append(NSIndexPath(item: i, section: 0))
@@ -106,7 +107,7 @@ class HomeCollectionViewController: UICollectionViewController {
 extension HomeCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = view.frame.size.width
-        let squareSize = width * 0.4
+        let squareSize = width * 0.5 - 20
         return CGSize(width: squareSize, height: squareSize)
     }
 }

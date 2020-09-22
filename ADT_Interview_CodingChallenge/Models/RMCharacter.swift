@@ -14,3 +14,9 @@ struct RMCharacter: Decodable {
     var species: String
     var image: String
 }
+
+enum RMCharacterDetails: String, CaseIterable {
+    case name
+    case status
+    case species
+}

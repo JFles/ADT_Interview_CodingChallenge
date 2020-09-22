@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class DetailViewController: UIViewController {
     // MARK: - Properties
     var character: RMCharacter?
@@ -43,16 +45,49 @@ class DetailViewController: UIViewController {
 // MARK: - TableView DataSource
 extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        #warning("Implement character property count")
-        return 5
+        #warning("Refactor this")
+        let mirror = Mirror(reflecting: character!)
+        var rowCount = 0
+
+        for child in mirror.children {
+            guard let label = child.label else { return 0 }
+
+            for detail in RMCharacterDetails.allCases {
+                if label == detail.rawValue {
+                    rowCount += 1
+                }
+            }
+        }
+
+        return rowCount
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterDetail", for: indexPath)
 
-        cell.textLabel?.text = "foo\(indexPath.row)"
-
+        let index = indexPath.row
+        switch index {
+            case 0:
+                setCellTitle(cell, to: "Name")
+                setCellSubtitle(cell, to: character?.name ?? "")
+            case 1:
+                setCellTitle(cell, to: "Status")
+                setCellSubtitle(cell, to: character?.status ?? "")
+            case 2:
+                setCellTitle(cell, to: "Species")
+                setCellSubtitle(cell, to: character?.species ?? "")
+            default:
+                break
+        }
         return cell
+    }
+
+    fileprivate func setCellTitle(_ cell: UITableViewCell, to text: String) {
+        cell.textLabel?.text = text
+    }
+
+    fileprivate func setCellSubtitle(_ cell: UITableViewCell, to text: String) {
+        cell.detailTextLabel?.text = text
     }
 }
 

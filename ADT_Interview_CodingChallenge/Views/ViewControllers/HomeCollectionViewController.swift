@@ -53,7 +53,13 @@ class HomeCollectionViewController: UICollectionViewController {
         DispatchQueue.main.async { [weak self] in
             guard let strongSelf = self else { return }
 
-            strongSelf.collectionView.reloadData()
+            var indexPaths: [NSIndexPath] = []
+            for i in 0..<strongSelf.collectionView!.numberOfItems(inSection: 0) {
+                indexPaths.append(NSIndexPath(item: i, section: 0))
+            }
+
+            strongSelf.collectionView.reloadItems(at: indexPaths as [IndexPath])
+//            strongSelf.collectionView.reloadData()
             strongSelf.isLoading = false
         }
     }

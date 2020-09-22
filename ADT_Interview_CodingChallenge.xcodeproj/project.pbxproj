@@ -96,12 +96,38 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		6026F10D251A87A800B09469 /* CollectionViewCells */ = {
+		6026F10D251A87A800B09469 /* CollectionViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				6026F122251A9E5D00B09469 /* Cells */,
+				6026F123251A9E6700B09469 /* ViewComponents */,
+			);
+			path = CollectionViewComponents;
+			sourceTree = "<group>";
+		};
+		6026F118251A9E1500B09469 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6026F102251A7C6000B09469 /* HomeCollectionViewController.swift */,
+				6026F0EC251A5D4700B09469 /* DetailViewController.swift */,
+				60582DDE251A5214005B4B8F /* HomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6026F122251A9E5D00B09469 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				6026F10E251A87D400B09469 /* CharacterCollectionViewCell.swift */,
 			);
-			path = CollectionViewCells;
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		6026F123251A9E6700B09469 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewComponents;
 			sourceTree = "<group>";
 		};
 		60582DCE251A5213005B4B8F = {
@@ -131,7 +157,7 @@
 				6026F0F1251A6CC500B09469 /* Extensions */,
 				60582E0F251A5234005B4B8F /* Models */,
 				60582E0E251A522A005B4B8F /* Storyboards */,
-				60582E0D251A5221005B4B8F /* ViewControllers */,
+				60582E0D251A5221005B4B8F /* Views */,
 				60582DE3251A5216005B4B8F /* Assets.xcassets */,
 				60582DE8251A5216005B4B8F /* Info.plist */,
 			);
@@ -156,15 +182,13 @@
 			path = ADT_Interview_CodingChallengeUITests;
 			sourceTree = "<group>";
 		};
-		60582E0D251A5221005B4B8F /* ViewControllers */ = {
+		60582E0D251A5221005B4B8F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6026F10D251A87A800B09469 /* CollectionViewCells */,
-				60582DDE251A5214005B4B8F /* HomeViewController.swift */,
-				6026F0EC251A5D4700B09469 /* DetailViewController.swift */,
-				6026F102251A7C6000B09469 /* HomeCollectionViewController.swift */,
+				6026F118251A9E1500B09469 /* ViewControllers */,
+				6026F10D251A87A800B09469 /* CollectionViewComponents */,
 			);
-			path = ViewControllers;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		60582E0E251A522A005B4B8F /* Storyboards */ = {

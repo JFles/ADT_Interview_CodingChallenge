@@ -11,7 +11,7 @@ class HomeCollectionViewController: UICollectionViewController {
     // MARK: - Properties
     var characters = [RMCharacter]()
     var currentPage = 1
-    var isLoadingPage = false
+    var isLoading = false
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -53,9 +53,8 @@ class HomeCollectionViewController: UICollectionViewController {
         DispatchQueue.main.async { [weak self] in
             guard let strongSelf = self else { return }
 
-            #warning("Make sure this is performant")
             strongSelf.collectionView.reloadData()
-            strongSelf.isLoadingPage = false
+            strongSelf.isLoading = false
         }
     }
 
@@ -84,4 +83,25 @@ class HomeCollectionViewController: UICollectionViewController {
 
         navigationController?.pushViewController(vc, animated: true)
     }
+
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == characters.count - 10 && !self.isLoading {
+            loadMoreData()
+        }
+    }
+
+    func loadMoreData() {
+        self.isLoading = true
+        currentPage += 1
+        loadNetworkData(page: currentPage)
+    }
 }
+
+extension HomeCollectionViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = view.frame.size.width
+        let squareSize = width * 0.4
+        return CGSize(width: squareSize, height: squareSize)
+    }
+}
+

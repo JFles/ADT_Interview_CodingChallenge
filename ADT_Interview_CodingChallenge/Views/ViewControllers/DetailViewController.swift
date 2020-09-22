@@ -10,15 +10,7 @@ import UIKit
 class DetailViewController: UIViewController {
     // MARK: - Properties
     var character: RMCharacter?
-    @IBOutlet var characterImage: UIImageView! {
-        didSet {
-            #warning("Need to resize image when device rotates")
-            characterImage.contentMode = .scaleAspectFill
-
-            let screenHeight = UIScreen.main.bounds.height
-            characterImage.heightAnchor.constraint(equalToConstant: screenHeight / 3).isActive = true
-        }
-    }
+    @IBOutlet var characterImage: UIImageView!
     @IBOutlet var tableView: UITableView!
 
 

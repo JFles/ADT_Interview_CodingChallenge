@@ -22,10 +22,5 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         imageView.layer.borderWidth = 0.1
         imageView.layer.borderColor = UIColor.lightGray.cgColor
         imageView.layer.cornerRadius = 12
-
-        NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 2 - 16),
-            imageView.heightAnchor.constraint(equalTo: widthAnchor)
-        ])
     }
 }

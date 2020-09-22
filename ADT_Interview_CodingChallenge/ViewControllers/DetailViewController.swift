@@ -18,7 +18,20 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configureNavigationBar()
+        configureCharacterImage()
         configureTableView()
+    }
+
+    fileprivate func configureNavigationBar() {
+        title = character?.name
+    }
+
+    fileprivate func configureCharacterImage() {
+        guard let url = URL(string: character?.image ?? "") else { return }
+
+        characterImage.load(url: url)
+        characterImage.contentMode = .scaleAspectFill
     }
 
     fileprivate func configureTableView() {

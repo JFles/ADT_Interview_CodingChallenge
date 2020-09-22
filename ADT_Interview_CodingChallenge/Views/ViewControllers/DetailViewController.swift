@@ -43,7 +43,6 @@ class DetailViewController: UIViewController {
 // MARK: - TableView DataSource
 extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        #warning("Refactor this")
         let mirror = Mirror(reflecting: character!)
         var rowCount = 0
 
@@ -74,9 +73,14 @@ extension DetailViewController: UITableViewDataSource {
             case 2:
                 setCellTitle(cell, to: "Species")
                 setCellSubtitle(cell, to: character?.species ?? "")
+            case 3:
+                setCellTitle(cell, to: "Location")
+                setCellSubtitle(cell, to: character?.location.name ?? "")
             default:
                 break
         }
+
+
         return cell
     }
 

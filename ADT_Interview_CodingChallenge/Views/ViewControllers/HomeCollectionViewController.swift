@@ -53,19 +53,12 @@ class HomeCollectionViewController: UICollectionViewController {
         DispatchQueue.main.async { [weak self] in
             guard let strongSelf = self else { return }
 
-            #warning("Fix updating issue -- likely an async issue")
-            var indexPaths: [NSIndexPath] = []
-            for i in 0..<strongSelf.collectionView!.numberOfItems(inSection: 0) {
-                indexPaths.append(NSIndexPath(item: i, section: 0))
-            }
-
-            strongSelf.collectionView.reloadItems(at: indexPaths as [IndexPath])
-//            strongSelf.collectionView.reloadData()
+            strongSelf.collectionView.reloadData()
             strongSelf.isLoading = false
         }
     }
 
-    // MARK: - UICollectionViewDataSource
+    // MARK: - UICollectionView Methods
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return characters.count
     }
@@ -92,7 +85,7 @@ class HomeCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == characters.count - 10 && !self.isLoading {
+        if indexPath.row == characters.count - 1 && !self.isLoading {
             loadMoreData()
         }
     }
